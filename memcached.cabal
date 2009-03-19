@@ -18,5 +18,4 @@ tested-with:         GHC==6.8.2, GHC==6.10
 exposed-modules:     Network.Memcache, Network.Memcache.Protocol, Network.Memcache.Serializable,
                      Network.Memcache.ServerPool, Network.Memcache.Key
 
-ghc-options:         -O -Wall
 ghc-prof-options:    -prof -auto-all
