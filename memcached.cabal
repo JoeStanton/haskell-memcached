@@ -1,7 +1,8 @@
 name:                memcached
-version:             0.1
+version:             0.1.1
 stability:           Alpha
 synopsis:            haskell bindings for memcached
+description:         haskell bindings for memcached
 category:            Network
 license:             OtherLicense
 license-file:        LICENSE
@@ -17,5 +18,5 @@ tested-with:         GHC==6.8.2, GHC==6.10
 exposed-modules:     Network.Memcache, Network.Memcache.Protocol, Network.Memcache.Serializable,
                      Network.Memcache.ServerPool, Network.Memcache.Key
 
-ghc-options:         -O2 -Wall -optl-Wl,-s
+ghc-options:         -O -Wall
 ghc-prof-options:    -prof -auto-all
