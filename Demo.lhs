@@ -72,4 +72,8 @@ For more complicated data, you can do whatever crazy bitpacking necessary.
 >   fred' <- Network.Memcache.get memcache "u:fred"
 >   putStrLn ("Fred is " ++ show (fred' :: Maybe User))
 
+>   invalid <- Network.Memcache.get memcache "this key doesn't exist"
+>   putStrLn ("Unknown returns: " ++ show (invalid :: Maybe User))
+
+
 vim: set ts=2 sw=2 et :

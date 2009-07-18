@@ -101,9 +101,12 @@ instance Memcache Server where
   get (Server handle) key = do
     hPutCommand handle ["get", toKey key]
     val <- getOneValue handle
-    hGetNetLn handle    -- trailing \r\n
-    hGetNetLn handle    -- "END"
-    return (val >>= fromString)
+    case val of
+      Nothing -> return Nothing
+      Just val -> do
+        hGetNetLn handle
+        hGetNetLn handle
+        return $ fromString val
 
   delete (Server handle) key delta = do
     hPutCommand handle [toKey key, show delta]
